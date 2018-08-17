@@ -1,0 +1,26 @@
+<div class="container">
+
+  <h1>New cocktail</h1>
+
+<%= simple_form_for @cocktail do |f| %>
+
+  <% if @cocktail.errors.any? %>
+    <div class="well" id="error_explanation">
+      <strong>
+        <%= pluralize(@cocktail.errors.count, "error") %>
+        prohibited this cocktail from being saved:
+      </strong>
+
+      <ul>
+      <% @cocktail.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <%= f.input :name %>
+
+    <%= f.submit "Create", class: "btn btn-primary" %>
+  </div>
+<% end %>

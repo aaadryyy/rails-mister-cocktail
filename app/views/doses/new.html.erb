@@ -1,0 +1,28 @@
+<div class="container">
+  <h1>Nouvelle dose</h1>
+
+
+  <%= simple_form_for [@cocktail, @dose] do |f| %>
+
+    <% if @dose.errors.any? %>
+      <div class="well" id="error_explanation">
+        <strong>
+          <%= pluralize(@dose.errors.count, "error") %>
+          prohibited this dose from being saved:
+        </strong>
+
+        <ul>
+        <% @dose.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+      <%= f.input :description %>
+      <%= f.association :ingredient %>
+
+      <%= f.submit "Create", class: "btn btn-primary" %>
+  <% end %>
+
+</div>
