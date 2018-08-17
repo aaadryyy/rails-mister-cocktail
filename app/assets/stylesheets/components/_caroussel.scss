@@ -1,0 +1,26 @@
+.row {
+  overflow: scroll;
+  width: 100%;
+}
+.row__inner {
+  transition: 450ms -webkit-transform;
+  transition: 450ms transform;
+  transition: 450ms transform, 450ms -webkit-transform;
+  font-size: 0;
+  white-space: nowrap;
+  margin: 70.3125px 0;
+  padding-bottom: 10px;
+}
+
+.row__inner:hover {
+  -webkit-transform: translate3d(-62.5px, 0, 0);
+          transform: translate3d(-62.5px, 0, 0);
+}
+.row__inner:hover .tile {
+  opacity: 0.3;
+}
+.row__inner:hover .tile:hover {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  opacity: 1;
+}

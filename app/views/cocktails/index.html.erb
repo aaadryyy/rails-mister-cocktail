@@ -1,34 +1,53 @@
-<div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-4">Fluid jumbotron</h1>
-    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-  </div>
+<%= render 'shared/navbar' %>
+
+<div class="container">
+  <%= render 'shared/banner_content' %>
 </div>
 
-<div class="card" style="width: 18rem;">
-  <img class="card-img-top" src=".../100px180/" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
+<%= render 'shared/banner_background' %>
+
 
 <div class="container">
 
-  <h1>Cocktails</h1>
-  <%= link_to "Add a cocktail", new_cocktail_path %>
+  <div class="row">
 
-  <ul>
     <% @cocktails.each do |cocktail| %>
-      <li>
-        <%= link_to (cocktail_path(cocktail)) do%>
+
+       <!--  <%= link_to (cocktail_path(cocktail)) do%>
         <% if !cocktail.photo.url.nil? %>
-        <%= cl_image_tag cocktail.photo, height: 100, width: 100, crop: :fill %>
+        <%= cl_image_tag cocktail.photo.url(:thumnail) ,crop: :fill %>
         <% end %>
           <%= cocktail.name %>
-        <% end %>
-      </li>
+        <% end %> -->
+
+    <div class="example-2 card col-xs-12 col-md-4">
+      <div class="wrapper">
+<!--         <%= cl_image_tag cocktail.photo.url(:thumnail) ,crop: :fill %>
+ -->
+        <div class="data">
+          <div class="content">
+
+<!--             <span class="author">Jane Doe</span>
+ -->        <h1 class="title">
+              <%= link_to (cocktail_path(cocktail)) do%>
+                  <%= cocktail.name %>
+              <% end %>
+            </h1>
+            <%= link_to "More info", cocktail_path(cocktail), class:"button" %>
+          </div>
+        </div>
+      </div>
+    </div>
     <% end %>
-  </ul>
+    </div>
+
+
+  </div>
+
+
 </div>
+
+
+</div>
+<%= render 'shared/footer' %>
+

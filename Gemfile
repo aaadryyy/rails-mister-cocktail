@@ -59,9 +59,11 @@ gem 'rspec-rails', group: [ :test ]
 gem 'rails-controller-testing', group: [ :test ]
 
 gem 'autoprefixer-rails'
-gem 'bootstrap-sass', '~> 3.3.7'
+gem 'bootstrap', '~> 4.1.3'
+# gem 'bootstrap-sass', '~> 3.3.7'
 gem 'font-awesome-sass', '~> 5.0.9'
 gem 'simple_form'
+gem 'jquery-rails'
 
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary'
